@@ -1,23 +1,24 @@
 criaCartao(
-    'Bíblicas',
+    'Preguntas Bíblicas',
     'Qual o capítulo mais conhecido da bíblia?',
     'O Salmos 23'
 )
 
 criaCartao(
-    'Bíblicas',
-    'Qual a capital da França?',
-    'A capital da França é Paris'
+    'Preguntas Bíblicas',
+    'Onde Jeusus nasceu?',
+    'Belém'
 )
 
 criaCartao(
-    'Programação',
-    'O que é uma função?',
-    'Uma função é um bloco de código que executa alguma tarefa'
+    'Preguntas Bíblicas',
+    ' Quem foi lançado na cova dos leões?',
+    'Daniel'
 )
 
 criaCartao(
-    'Lingua inglesa',
-    'Como se diz oi em Inglês?',
-    'Oi em ingles é HI (RAI)'
+    'Preguntas Bíblicas',
+    ' Qual o nome do lugar onde habitavam Adão e Eva?',
+    'Jardim do Eden'
 )
+
