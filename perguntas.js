@@ -1,11 +1,11 @@
 criaCartao(
-    'Programação',
-    'O que é Python?',
-    'O Python é uma linguagem de programação'
+    'Bíblicas',
+    'Qual o capítulo mais conhecido da bíblia?',
+    'O Salmos 23'
 )
 
 criaCartao(
-    'Geografia',
+    'Bíblicas',
     'Qual a capital da França?',
     'A capital da França é Paris'
 )
