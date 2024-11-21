@@ -1,7 +1,7 @@
 criaCartao(
     'Preguntas Bíblicas',
     'Qual o capítulo mais conhecido da bíblia?',
-    'O Salmos 23'
+    'Salmos 23'
 )
 
 criaCartao(
