@@ -1,7 +1,12 @@
 :root {
     --text-color: #F5E1F7;
-    --card-front-color: url('assets/img/woodcard.png');
-    --card-back-color: url('assets/img/woodcard.png');
+.card {
+    color: var(--text-color);
+    background-image: var(--card-front-color); 
+}
+
+.card-back {
+    background-image: var(--card-back-color);
 }
 
 body {
