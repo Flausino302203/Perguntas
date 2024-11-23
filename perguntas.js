@@ -21,3 +21,15 @@ criaCartao(
     'Qual o nome do lugar onde habitavam Adão e Eva?',
     'Jardim do Éden'    
 )
+
+criaCartao(
+    'Perguntas Bíblicas',
+    'Quem traiu Jesus?',
+    'Judas Iscariotes'
+)
+
+criaCartao(
+    'Perguntas Bíblicas',
+    'Qual o primeiro milagre de Jesus?',
+    'Transformar água em vinho'
+)
