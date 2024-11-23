@@ -1,21 +1,17 @@
 :root {
-    --text-color: #F5E1F7;
-.card {
-    color: var(--text-color);
-    background-image: var(--card-front-color); 
-}
-
-.card-back {
-    background-image: var(--card-back-color);
+    --text-color: #F5E1F7; /* Define a cor do texto */
+    --card-front-color: url('assets/img/woodcard.png'); /* Imagem da frente */
+    --card-back-color: url('assets/img/woodcard.png'); /* Imagem do verso */
 }
 
 body {
-    background: url('assets/img/arcadenoe.png');
-    font-family: Bai Jamjuree;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
 }
 
 #container {
-    display: flex; 
+    display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 4rem;
@@ -23,18 +19,20 @@ body {
 }
 
 .cartao {
-    margin: 1rem 1rem;
-    height: 20rem;
+    perspective: 1000px; /* Adiciona a perspectiva 3D */
     flex-grow: 1;
     flex-basis: calc(33% - 6rem);
 }
 
 .cartao__conteudo {
-    background-color: var(--card-front-color);
+    background-image: var(--card-front-color); /* Frente do cartão */
+    background-size: cover;
+    background-position: center;
     text-align: center;
-    height: 100%;
+    height: 20rem;
     transform-style: preserve-3d;
     transition: transform 300ms ease-in-out;
+    position: relative;
 }
 
 .cartao__conteudo h3 {
@@ -45,7 +43,7 @@ body {
     position: absolute;
     margin: 0.6rem;
     border-radius: 0.6rem;
-    font-size: 1vw;
+    font-size: 1.2rem;
     backface-visibility: hidden;
 }
 
@@ -53,40 +51,37 @@ body {
     margin-top: 1rem;
     padding: 2rem;
     margin-top: 4rem;
-    font-size: 1.4vw;
+    font-size: 1rem;
+    color: var(--text-color);
 }
 
 .cartao__conteudo__pergunta p {
-    color: var(--text-color);
     font-weight: 500;
 }
 
-.cartao__conteudo__resposta p {
-    color: var(--card-back-color);
-    font-weight: 700;
+.cartao__conteudo__resposta {
+    background-image: var(--card-back-color); /* Verso do cartão */
+    background-size: cover;
+    background-position: center;
+    transform: rotateY(180deg);
+    border: 4px solid var(--text-color);
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+    box-sizing: border-box;
+    padding: 2rem;
+    color: #000;
+    font-weight: bold;
 }
 
 .cartao.active .cartao__conteudo {
-    transform: rotateY(180deg);
-}
-
-.cartao__conteudo__pergunta,
-.cartao__conteudo__resposta {
-    backface-visibility: hidden;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.cartao__conteudo__resposta {
-    transform: rotateY(180deg);
-    background-color: rgba(241, 198, 231, 0.2);
-    border: 4px solid var(--card-back-color);
+    transform: rotateY(180deg); /* Gira o cartão ao clicar */
 }
 
 footer {
-    background-color: #F1C6E7; /* Tom suave de rosa para o rodapé */
+    background-color: #F1C6E7;
     color: white;
     position: fixed;
     bottom: 0;
@@ -96,18 +91,18 @@ footer {
 
 footer p {
     text-align: center;
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     margin-top: 0.5rem;
 }
 
 @media (max-width: 560px) {
-    
     body {
-        background: url('img/bg-mobile.webp'), no-repeat cover;
+        background: url('img/bg-mobile.webp') no-repeat;
+        background-size: cover;
     }
 
     .cartao {
-        flex: 1 0 calc(100% - 1rem)
+        flex: 1 0 calc(100% - 1rem);
     }
 
     .cartao__conteudo h3 {
