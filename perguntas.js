@@ -31,7 +31,7 @@ criaCartao(
 criaCartao(
     'Perguntas Bíblicas',
     'Qual o primeiro milagre de Jesus?',
-    'Transformar água em vinho'
+    ' A transformação da água em vinho'
 )
 
 criaCartao(
