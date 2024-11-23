@@ -1,11 +1,11 @@
 :root {
-    --text-color: #F5E1F7; /* Cor suave e feminina para o texto */
-    --card-front-color: #F8A3D1; /* Rosa suave para o fundo dos cartões */
-    --card-back-color: #F1C6E7; /* Rosa claro pastel para o verso do cartão */
+    --text-color: #F5E1F7;
+    --card-front-color: url('assets/img/woodcard.png');
+    --card-back-color: url('assets/img/woodcard.png');
 }
 
 body {
-    background: url('img/bg-desktop.webp');
+    background: url('assets/img/arcadenoe.png');
     font-family: Bai Jamjuree;
 }
 
