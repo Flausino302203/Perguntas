@@ -1,5 +1,5 @@
 :root {
-    --text-color: #F5E1F7; /* Define a cor do texto */
+    --text-color: #F5E1F7; /* Cor do texto */
     --card-front-color: url('assets/img/woodcard.png'); /* Imagem da frente */
     --card-back-color: url('assets/img/woodcard.png'); /* Imagem do verso */
 }
@@ -10,70 +10,62 @@ body {
     background-color: #f7f7f7;
 }
 
+main {
+    min-height: calc(100vh - 2rem); /* Considera o tamanho do rodapé */
+}
+
 #container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 4rem;
-    gap: 3rem;
+    padding: 2rem;
+    gap: 2rem;
 }
 
 .cartao {
-    perspective: 1000px; /* Adiciona a perspectiva 3D */
+    perspective: 1000px; /* Adiciona perspectiva 3D */
     flex-grow: 1;
-    flex-basis: calc(33% - 6rem);
+    flex-basis: calc(33% - 4rem); /* Ocupa um terço do espaço */
+    height: 20rem;
 }
 
 .cartao__conteudo {
-    background-image: var(--card-front-color); /* Frente do cartão */
+    background-image: var(--card-front-color); /* Imagem de fundo na frente */
     background-size: cover;
     background-position: center;
     text-align: center;
-    height: 20rem;
+    height: 100%;
     transform-style: preserve-3d;
-    transition: transform 300ms ease-in-out;
+    transition: transform 0.3s ease-in-out;
     position: relative;
 }
 
-.cartao__conteudo h3 {
-    color: var(--text-color);
-    border: 1px solid var(--text-color);
-    text-align: left;
-    padding: 0.5rem;
+.cartao__conteudo__pergunta {
+    backface-visibility: hidden; /* Esconde o conteúdo ao girar */
     position: absolute;
-    margin: 0.6rem;
-    border-radius: 0.6rem;
-    font-size: 1.2rem;
-    backface-visibility: hidden;
-}
-
-.cartao__conteudo p {
-    margin-top: 1rem;
-    padding: 2rem;
-    margin-top: 4rem;
-    font-size: 1rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     color: var(--text-color);
-}
-
-.cartao__conteudo__pergunta p {
-    font-weight: 500;
+    font-size: 1.2rem;
+    text-align: center;
 }
 
 .cartao__conteudo__resposta {
-    background-image: var(--card-back-color); /* Verso do cartão */
+    background-image: var(--card-back-color); /* Imagem de fundo no verso */
     background-size: cover;
     background-position: center;
-    transform: rotateY(180deg);
     border: 4px solid var(--text-color);
+    backface-visibility: hidden;
     position: absolute;
     top: 0;
-    height: 100%;
+    left: 0;
     width: 100%;
-    backface-visibility: hidden;
-    box-sizing: border-box;
-    padding: 2rem;
+    height: 100%;
+    transform: rotateY(180deg);
     color: #000;
-    font-weight: bold;
+    font-size: 1rem;
+    padding: 1rem;
 }
 
 .cartao.active .cartao__conteudo {
@@ -96,20 +88,11 @@ footer p {
 }
 
 @media (max-width: 560px) {
-    body {
-        background: url('img/bg-mobile.webp') no-repeat;
-        background-size: cover;
+    #container {
+        flex-direction: column;
     }
 
     .cartao {
-        flex: 1 0 calc(100% - 1rem);
-    }
-
-    .cartao__conteudo h3 {
-        font-size: 3vw;
-    }
-
-    .cartao__conteudo p {
-        font-size: 3.8vw;
+        flex: 1 0 calc(100% - 2rem);
     }
 }
